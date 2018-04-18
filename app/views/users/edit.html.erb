@@ -1,0 +1,10 @@
+<h1>更新</h1>
+
+<p><%= link_to "会員の詳細に戻る", @user %></p>
+
+<%= simple_form_for @user do |f| %>
+
+<%= render "form" %>
+
+<%= f.button :submit %>
+<% end %>

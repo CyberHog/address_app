@@ -1,0 +1,19 @@
+<%= simple_form_for @user do |f| %>
+
+<%= f.input :last_name %>
+<%= f.input :first_name %>
+<%= f.input :phone %>
+
+  <%= f.simple_fields_for :address do |fin| %>
+
+    <%= fin.input :postcode, input_html: {id: "address_zipcode"} %>
+    <%= fin.input :prefecture, input_html: {id: "address_prefecture_name"} %>
+    <%= fin.input :city, input_html: {id: "address_city"} %>
+    <%= fin.input :address_street, input_html: {id: "address_street"} %>
+    <%= fin.input :address_building, input_html: {id: "address_building"} %>
+
+<% end %>
+
+<%= f.submit "登録" %>
+
+<% end %>

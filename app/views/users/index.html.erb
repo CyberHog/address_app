@@ -1,0 +1,40 @@
+<h1>会員名簿</h1>
+
+<p><%= link_to "会員の新規登録", :new_user %></p>
+
+<% if @users.present? %>
+<table class="list">
+    <% @users.each do |user| %>
+  <tr>
+    <th>氏名</th>
+    <td><%= link_to user.full_name, user %></td>
+  </tr>
+  <tr>
+    <th>電話番号</th>
+    <td><%= user.phone %></td>
+  </tr>
+  <tr>
+    <th>郵便番号</th>
+    <td><%= user.address.postcode %></td>
+  </tr>
+  <tr>
+    <th>都道府県</th>
+    <td><%= user.address.prefecture %></td>
+  </tr>
+  <tr>
+    <th>市区町村</th>
+    <td><%= user.address.city %></td>
+  </tr>
+  <tr>
+    <th>町域・番号</th>
+    <td><%= user.address.address_street %></td>
+  </tr>
+  <tr>
+    <th>建物名・号室</th>
+    <td><%= user.address.address_building %></td>
+  </tr>
+<% end %>
+</table>
+<% else %>
+<p>会員情報がありません</p>
+<% end %>
